@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCAN=$(/usr/bin/python2.7 /tmp/silabs/ncp.py scan 2>/dev/null)
+SCAN=$(/usr/bin/python /tmp/silabs/ncp.py scan 2>/dev/null)
 
 if echo $SCAN | grep zigbee; then
 	PORT=$(echo $SCAN | jq '.ports' | jq '.[0]' | jq -r '.port')
